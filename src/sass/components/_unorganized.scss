@@ -1,0 +1,76 @@
+article.article {
+
+ 
+  
+  
+}
+
+
+
+
+#readme, .content {
+  
+  border-radius: 5px;
+  margin: 1rem 0;
+  
+ background-color: rgba($purpleywhite,0.99); 
+  @include layout-padding;
+  
+  a {
+    color: $dark-lavendar;
+    position: relative;
+   
+
+    
+  }
+  
+  ul {
+    margin: 1rem;
+    
+    li {
+      margin: 0.3rem 0;
+      
+      &:before {      
+        content: '\25C6';
+        margin-right: 0.5rem;
+        color: $offblack;
+       
+      }
+      
+    }
+  }
+  
+  input[type=checkbox]{
+    //margin-right: 0.3rem;
+    //margin-bottom: 0.2rem;
+    position: absolute;
+    left: 2em;
+    z-index: 500;
+    
+  }
+  
+   animation: fadein 0.5s $ease-bounce;
+    animation-direction: normal; 
+    animation-fill-mode: both;
+  
+}
+
+.content.first {
+   animation: none;
+  
+}
+
+
+.intro {
+ // background-color: rgba($pinkish,0.3); 
+  //background-color: transparent;
+  //display: none;
+  animation: none;
+  padding: 0 0 0.5rem;
+}
+
+
+
+
+
+

@@ -1,0 +1,164 @@
+
+
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+ 
+  h1 { 
+   // @include debug-focus;
+   //font-family: bungee;
+    //font-size: 2.5em;
+  color: $purpleywhite;
+    //text-align: right;
+   
+    //font-size: 2.5em; 
+    
+    font-size: 6vmin;
+   line-height: 1.5;
+  font-family: $heading;
+    //font-size:3em;
+ // color: $black;
+   //color: rgba($dark-lavendar, 0.3);
+   
+    
+    //&:before {
+     // border-left: 0.75rem solid $pinkish;
+     // margin-right: 0.25rem;
+     // background: $pinkish;
+     // content: " ";
+    //}
+  }
+ 
+
+
+h2 {
+  font-size: 2em;  
+  font-family: $sub-heading;
+  color: $black;
+  
+}
+
+h3 {
+  //@include debug-focus;
+  font-family: $sub-heading;
+  font-size: 1.5em;
+  margin-top: 2rem;
+  color: $black;
+}
+
+h4 {
+  font-size: 1.2em;
+}
+
+h5 {
+  font-size: 1.1em;
+}
+
+h6 {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+p {
+  margin: 1rem 0;  
+}
+
+small {
+  font-size: 80%;
+  display: block;
+  margin: 0.5rem 0;
+  opacity: 0.8;
+}
+
+
+.bubbleblock {
+      flex: 0 1 auto;
+    color: $black;
+    font-family: $bungee-hairline;  
+    font-size: 10vmin;
+    padding: 0;
+    margin: 0;
+    //line-height: 1;
+    text-align: center;
+    text-shadow: $color-text-shadow;
+ 
+    color: $purpleywhite;
+    font-family: $bungee;
+    filter: sepia(1) hue-rotate(200deg);
+    -webkit-filter: sepia(1) hue-rotate(210deg); 
+    font-size: 10vmin;
+    padding: 0;
+    margin: 0;
+   // line-height: 1;
+  
+  
+  &:hover {
+    //text-shadow: $color-text-shadow-lowered;
+     text-shadow: $color-text-shadow-lowered;
+    transition: all 200ms ease;
+   // cursor: crosshair;
+  }
+  
+  
+  
+}
+
+.dexo-header {
+  flex: 0 1 auto;
+   
+    text-align: center;
+    //text-shadow: $color-text-shadow;
+ 
+    color: $white;
+    font-family: $heading;
+    font-size: 10vmin;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  
+  
+  &:hover {
+    //text-shadow: $color-text-shadow-lowered;
+    // text-shadow: $color-text-shadow-lowered;
+    transition: all 200ms ease;
+   // cursor: crosshair;
+  }
+  
+}
+
+.tagline {
+  font-size: 90%;
+  color: grey;
+}
+
+.home-selected {
+    //text-shadow: $color-text-shadow-lowered;
+  }
+
+
+// misc.
+
+.frikkincool {
+   
+    text-shadow: $color-text-shadow;
+    color: $purpleywhite;
+    font-family: $bungee-hairline;
+    filter: sepia(1) hue-rotate(200deg);
+    -webkit-filter: sepia(1) hue-rotate(210deg); 
+    font-size: 10vmin;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+}
+

@@ -1,0 +1,116 @@
+$top: rgba($dark-lavendar,0.2);
+$bottom: rgba($dark-lavendar,0.4);
+
+
+.placeholder {
+  min-height: 200vh;
+  width: 100%;
+  background: linear-gradient(125deg, $top, $bottom);
+  background-size: 400%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  border-radius: 5px;
+  padding-top: 3em;
+  
+    animation: fadein 0.5s $ease-bounce;
+    animation-direction: normal; 
+    animation-fill-mode: both;
+   
+  
+  .fa-spinner{
+    height: 5em;
+    width: 5em;
+    color: rgba($lavendar,0.3);
+  }
+}
+
+
+
+.placeholder-masonry {
+ 
+ // @include column-wrap;
+ // width: 90vw;
+ // max-width: 970px;
+ // height: 350vh;
+ //column-count: 3; 
+ // column-width: 33%;
+ // column-gap: 0.5rem;  
+}
+
+
+.placeholder-card {
+  height: 150px;  
+  width: 100%;
+ // min-width: 200px;
+ // max-width: 300px;
+  background-color: transparent;
+  border-radius: 5px;  
+  padding: 0.5em;
+  margin: 0.5em;
+  display: flex;
+  @include column;
+  opacity: 0.9;
+  vertical-align: top;
+  
+  
+    animation: fadein 0.5s $ease-bounce;
+    animation-direction: normal; 
+    animation-fill-mode: both;
+  
+}
+
+.placeholder-card-inner {
+  height: 100%;
+  width: 100%;
+  //background-color: rgba($lavendar,0.1);
+  background: linear-gradient(125deg, $top, $bottom);
+  background-size: 400%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: inherit;  
+  animation: loading 0.7s linear infinite both;
+  
+  .fa-spinner{
+    height: 5em;
+    width: 5em;
+    color: rgba($lavendar,0.3);
+  }
+}
+
+.loading-buffer {
+  content: '   ';
+  width: 100%;
+  height: 150vh;
+}
+
+
+$time-list: 20ms, 30ms, 40ms, 50ms, 60ms, 70ms;
+
+
+@each $time in $time-list {
+    $item: random(2);
+    $i: index($time-list, $time); 
+    .placeholder-card:nth-child(#{$i}) {     
+        animation-delay: nth($time-list, $i);     
+    }
+}
+
+
+
+@keyframes loading {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.prog-load {
+  filter: blur(1px);
+}
