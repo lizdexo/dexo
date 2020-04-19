@@ -7,7 +7,7 @@ nav {
   
   $nav-adjustment: calc(10px + 1rem);
   
-  flex: 1 1 auto;
+  //flex: 1 1 auto;
   //margin-top: 10px;
   display: flex;
   justify-content: center;
@@ -28,22 +28,25 @@ nav {
     li {
      
       list-style-type: none;     
-      margin: 0 2px;
+      margin: 18px 2px 0;
       min-width: 5em;
       height: 100%;
       text-align: center;
       font-size: 1em;
      // width: 100%;
+       z-index: 5000 !important;
       
       
       a {
       
-          background: rgba($dark-lavendar, 0.3);
+          background: $grey900;
           color: $white;
           width: 100%;
           display: block;
           padding: 15px;
         border-radius: 3px;
+        box-shadow: $text-shadow;
+        z-index: 5000 !important;
         
         &:hover {
           background: $black;
@@ -51,6 +54,9 @@ nav {
           transition: all 200ms ease;
           border-radius: 3px;
           outline: none;
+          box-shadow: none;
+          transform:translate(1px,10px);
+          z-index: 1;
         }
         
         &:focus {
@@ -61,6 +67,10 @@ nav {
       .selected {
         background-color: $pinkish;
         cursor: default;
+        box-shadow: none;
+        transform:translate(1px,10px);
+        z-index: 1;
+        color: $black;
         
         &:hover {
            background: $pinkish;
@@ -80,7 +90,9 @@ nav {
 .selectedCategory {
         background-color: $pinkish;
         cursor: default;
-       
+       box-shadow: none;
+  transform:translate(1px,10px);
+  color: $black;
         
         &:hover {
            background: $pinkish;

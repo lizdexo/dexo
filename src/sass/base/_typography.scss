@@ -47,6 +47,10 @@ h2 {
   
 }
 
+.white-heading {
+  color: $purpleywhite;
+}
+
 h3 {
   //@include debug-focus;
   font-family: $sub-heading;

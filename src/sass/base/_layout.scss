@@ -42,9 +42,18 @@ body {
   margin: 0;
   background: $sidebar-bgcolor;
   min-width: 20vw;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
   
   nav ul li {
-    width: 100%;
+    width: 90%;
+  }
+  
+  nav ul {
+    justify-content: center;
   }
   
 }

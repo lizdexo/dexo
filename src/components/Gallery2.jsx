@@ -102,7 +102,7 @@ class Gallery extends Component {
     return (
      
  <>
-        <h2>{this.props.category}</h2>
+        <h2 className="white-heading">{this.props.category}</h2>
         
         <div
           className="gallery-masonry"
