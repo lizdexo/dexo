@@ -7,14 +7,18 @@
   border-radius: 5px;
   box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.06);
   padding: 0.5em;
-  margin: 1em auto;
+  //margin: 1em auto;
   //flex: 1 1 auto;
-  display: flex wrap;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
  // @include column;
   break-inside: avoid;
   page-break-inside: avoid;
   
- 
+  div:first-child {
+    width: 100%;
+  }
   
   aside {
     //display: block;
@@ -46,7 +50,7 @@
   height: 100%;
     display: flex;
     width: 100%;
-   
+   margin: 0;
     img{
       background-color: #fff;
      
@@ -54,6 +58,7 @@
     
   figcaption{
     flex: 1 1 100%;
+   
     //@include debug;
     //white-space: nowrap;
     //max-height: 5em;
@@ -197,7 +202,8 @@ details {
 
 .tags {
   display: flex;
-  @include row-wrap;
+  //@include row-wrap;
+  flex-flow: column;
   margin-bottom: 1em;
   
   

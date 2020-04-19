@@ -78,15 +78,16 @@
   
   @include hover;
   background-color: $dark-lavendar;  
-  height: 2em;
+  height: 100%;
   display: flex;
   justify-content: center;
-  //justify-content: flex-end;
   align-items: center;
   border-radius: 5px;
-  margin: 1rem 0 0;
+  margin: 0;
   border: none;
  padding: 0 1rem;
+  min-width: 10vw;
+  flex: 0 1 100%;
   
   color: $purpleywhite;
   
@@ -102,6 +103,26 @@
   
  // @include debug;
 }
+
+
+.list-item-link {
+  margin: 1rem 0;
+   background-color: $black;
+  color: $black;
+  padding: 1rem;
+    
+  &:hover {
+    background-color: $dark-lavendar;
+  }
+  
+  
+    &:active, &:focus {
+    @include no-flashy-select;
+  
+  }
+  
+}
+
 
 #backtop {
 
