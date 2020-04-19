@@ -1,0 +1,268 @@
+.gallery-card {
+  min-height: 100px;  
+  width: 100%;
+  min-width: 200px;
+  //max-width: 300px;
+  background-color: #fff; //lighten($pinkish, 10%); //lighten($lavendar,5%); 
+  border-radius: 5px;
+  box-shadow: 0px 10px 16px rgba(0, 0, 0, 0.1), 0px 4px 6px rgba(0, 0, 0, 0.06);
+  padding: 0.5em;
+  margin: 1em auto;
+  //flex: 1 1 auto;
+  display: flex wrap;
+ // @include column;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  
+ 
+  
+  aside {
+    //display: block;
+    text-align: right;
+    margin: 0;
+    opacity: 0.9;
+    font-size: 90%;
+    background-color: $purpleywhite;
+    border-radius: 5px;
+    padding: 0.3rem;
+    color: $dark-lavendar;
+    position: absolute;
+    top: 100px;
+    right: 1em;
+    
+    
+    b {
+      font-weight: bold;
+      
+    }
+  }
+   
+  h3 {
+      margin-top:0;
+    width: 100%;
+    }
+  
+  figure {
+  height: 100%;
+    display: flex;
+    width: 100%;
+   
+    img{
+      background-color: #fff;
+     
+    }
+    
+  figcaption{
+    flex: 1 1 100%;
+    //@include debug;
+    //white-space: nowrap;
+    //max-height: 5em;
+    //overflow: hidden;
+   text-overflow: ellipsis;
+    padding: 0.3rem;
+  }
+  }
+  
+    animation: fadein 0.5s $ease-bounce;
+    animation-direction: normal; 
+    animation-fill-mode: both;
+  
+}
+
+$time-list: 20ms, 40ms, 60ms, 80ms, 100ms, 120ms;
+
+
+@each $time in $time-list {
+    $item: random(2);
+    $i: index($time-list, $time); 
+    .gallery-card:nth-child(#{$i}) {     
+        animation-delay: nth($time-list, $i);     
+    }
+}
+
+
+.gallery-card:hover {
+  box-shadow: 0px 20px 25px rgba(0, 0, 0, 0.1), 0px 10px 10px rgba(0, 0, 0, 0.04);
+   //cursor: pointer;
+  transform: scale(1.03);
+    transition: box-shadow 300ms ease, background-color 500ms ease-out;
+  //background-color: lighten($pinkish, 10%);
+  color: $offblack;
+  
+  button {
+    background-color: darken($dark-lavendar, 5%);
+    width: 100%;
+    transition: all 500ms ease;
+    
+  }
+  
+}
+
+
+
+.gallery-card img:first-child {
+  border: 1px solid $purple-shadow;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+  width: 100%;
+  max-width: 100px;
+  max-height: 100px;
+  height:320px;
+  object-fit: cover;  
+  
+  &:hover{
+   filter: sepia(1) hue-rotate(200deg);
+-webkit-filter: sepia(1) hue-rotate(210deg); 
+   // @include smooth-transition;
+  }
+}
+
+.gallery {
+   
+  //@include debug;
+  @include row-wrap;
+  margin: auto;
+  width: 100%;
+  max-width: 970px;
+  //max-width:1500px;
+  //justify-content: center;
+  align-content: center;
+  align-items: flex-start;
+}
+
+.gallery-wide{
+  margin: auto;
+  width: 100%;
+  max-width: 970px;
+  
+  .gallery-card {
+    margin: 2em auto;
+   
+    h3 {
+      margin-top:0;
+    }
+    
+    /*
+    figure {
+      display: flex;
+      
+      a {
+        
+        width: 50%;
+      }
+    }
+    
+    figcaption {
+      max-width: 50%;
+      //flex: 0 0 50%;
+    }
+    */
+    
+  }
+}
+
+
+.gallery-masonry {
+
+ display: flex;
+  flex-flow: column;
+ width: auto;
+ 
+
+  
+}
+
+
+.my-masonry-grid_column {
+  padding-left: 0.7rem; /* gutter size */
+  //background-clip: padding-box;
+}
+
+
+
+.benefits-grid-container {
+  background-color: yellow;
+}
+
+
+
+details {
+  @include hover;
+  &[open] {
+    outline: none;
+  } 
+  
+}
+
+
+.tags {
+  display: flex;
+  @include row-wrap;
+  margin-bottom: 1em;
+  
+  
+  
+  dt {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 60%;
+  }
+  
+  dd {
+    color: $offblack;  
+    font-size: 70%;
+    display: inline-block;
+    padding: 0.4rem 0.5rem;
+    margin: 0.1rem;
+    background-color: $ws-cyan;
+    border-radius: 30px;
+  }
+  
+
+  
+  
+}
+
+
+$colors-list: $purple-shadow $ws-light-blue $ws-pastel-green $ws-pastel-pink $ws-soft-cyan $ws-pastel-purple $ws-rose-purple $ws-soft-pastel-green $ws-lilac $purple-shadow $ws-light-blue $ws-purple $ws-pastel-green $ws-pastel-pink $ws-soft-cyan $ws-pastel-purple $ws-rose-purple $ws-soft-pastel-green $ws-lilac $ws-cyan ws-light-blue $ws-pastel-green $ws-pastel-pink $ws-soft-cyan $ws-pastel-purple $ws-rose-purple; 
+
+
+@each $current-color in $colors-list {
+    $item: random(2);
+    $i: index($colors-list, $current-color) + $item; 
+    dd:nth-child(#{$i}) {     
+        background-color: nth($colors-list, $i);     
+    }
+}
+
+
+
+  @media (hover: none) {
+   
+
+.gallery-card img:first-child {
+ 
+  
+  &:hover{
+   filter: none;
+-webkit-filter: none; 
+  
+  }
+}
+    
+}
+
+  @media (pointer: coarse) {
+   
+
+.gallery-card img:first-child {
+ 
+  
+  &:hover{
+   filter: none;
+-webkit-filter: none; 
+  
+  }
+}
+    
+}

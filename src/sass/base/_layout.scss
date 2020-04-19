@@ -1,0 +1,97 @@
+
+
+body {
+  @include vh100;
+ 
+}
+
+#root {
+  @include vh100;
+}
+
+.app-container { 
+ 
+    @include column;
+    justify-content: flex-start; 
+    align-items: center;
+   // min-height: 100vh;
+  @include vh100;
+}
+
+
+.site-header {
+  @include row-wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  @include layout-padding; 
+  flex: 0 1 auto;
+  width: 100%;
+ //max-width: calc(980px + 2rem);
+  background: $header-bgcolor;
+  
+  .spacer {
+    content: '   ';
+    height: 3em;    
+    flex-grow: 3;
+  }  
+  
+}
+
+#sidebar {
+  margin: 0;
+  background: $sidebar-bgcolor;
+  min-width: 20vw;
+  
+}
+
+
+main {
+           
+     
+            margin: 0;
+            flex: 1 1 auto;
+            width: 100%;
+           // @include column;
+           // align-items: center;
+            //align-content: center;
+            //@include layout-padding; 
+  display: flex;
+}       
+
+.main-inner {
+
+  width: 100%;
+  max-width: 970px;
+}
+
+.intro {
+  padding: 0.5rem;
+}
+
+
+article:not(#modal) {
+ margin: 0 auto;
+   width: 100%;
+  //max-width: 970px;
+  @include layout-padding; 
+}
+
+footer {
+
+  @include layout-padding; 
+  flex: 0 1 auto;
+  min-height: 5em;
+  text-align: center;
+  background-color: $footer-bgcolor;
+  @include fontcolor-main;
+  width: 100%;
+  
+  ul {
+    margin-bottom: 1em;
+  }
+  
+  small {
+    font-style: italic;
+  }
+}
