@@ -34,15 +34,21 @@ class Gallery extends Component {
       observerRecord: "",
       content: [],
       columns: 3,
-      selectedCategory: "essential"
+      selectedCategory: this.props.category
     };
   }
 
   
   
   componentDidMount() {
+    // let paramID = this.props.match.params;
+   // let thisCategory = paramID.category;
+    
+   // console.log(thisCategory);
+  //  this.setState({ selectedCategory: thisCategory });
+    
     base("ResourceDump")
-      .select({ view: "All", fields: ["Name", "URL", "Description", "recordID", "ModifiedDate", "CategoryLink", "Cover", "Author", "Tags", "TagText", "SubCategory", "NotFree"]})
+      .select({ view: `${this.state.selectedCategory}`, fields: ["Name", "URL", "Description", "recordID", "ModifiedDate", "CategoryLink", "Cover", "Author", "Tags", "TagText", "SubCategory", "NotFree"]})
       .eachPage((records, fetchNextPage) => {
         this.setState({ records: records });
         fetchNextPage();
@@ -54,6 +60,15 @@ class Gallery extends Component {
 
 
   componentDidUpdate(prevProps, prevState) {
+    
+    
+    if(prevState.selectedCategory !== this.state.selectedCategory) { 
+     console.log("yay");
+    } else {
+      console.log("go to bed");
+    }
+    
+    
     if (prevState.records !== this.state.records) {
       console.log("records initially loaded");
       
@@ -71,32 +86,7 @@ class Gallery extends Component {
     }
   }
 
-  handleShow = (record, name, desc, attachments, skilltags, softwaretags) => {
-      
-    this.setState({ selectedRecord: record });
 
-    const id = record;
-    const selectedTitle = name;
-    const description = desc;
-    const picArray = attachments;
-    const skilltagsArray = skilltags;
-    const softwaretagsArray = softwaretags;
-    const selectedContent = [
-      selectedTitle,
-      description,
-      picArray,
-      skilltagsArray,
-      softwaretagsArray
-    ];
-    const prevContent = this.state.content;
-
-    if (prevContent !== selectedContent) {
-      this.updateContent(selectedContent);
-      console.log("content updated to", id);
-    } else {
-      console.log("content was not updated");
-    }
-  };
 
   updateContent(newContent) {
     const contentToUpdate = newContent;
@@ -105,40 +95,14 @@ class Gallery extends Component {
 
 
 
-unBreakColumns = (cols) => {
-  console.log(cols);
-  this.setState({columns: cols})
-}
-
-
 
   render() {
-    const breakpointColumnsObj = {
-      default: this.state.columns,
-      1100: this.state.columns,
-      900: 2,
-      700: 1
-    };
+   
 
     return (
      
-      <article id="gallery">
-        <section className="intro">
-       <h1>Web Development Resources</h1>
-          </section>
-        {/*<LazyLoad height={200} offset={500} once>  */}
-        {/*</LazyLoad>*/}
-        
-        
-      
-        
-         
-        
-        
-        
-    
-        
-       
+ <>
+        <h2>{this.props.category}</h2>
         
         <div
           className="gallery-masonry"
@@ -207,8 +171,8 @@ unBreakColumns = (cols) => {
          </div>
      
        
-        
-      </article>
+        </>   
+     
       
         
     );

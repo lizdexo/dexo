@@ -22,8 +22,10 @@ import LoremIpsum, {
 
 /* pages */
 import Gallery from "./components/Gallery.jsx";
+import Category from "./components/Category.jsx";
 import About from "./components/About.jsx";
 import Contact from "./components/Contact.jsx";
+import Airtable from "./components/AirtableEmbed.jsx";
 import Home from "./components/Home.jsx";
 
 /* setting up some cool icons */
@@ -41,18 +43,24 @@ const route = [
     {
       id: 1,
       url: "/webdev",
-      label: "Web Development"
+      label: "Web Development Resources"
+    },
+  {
+      id: 2,
+      url: "/uxui",
+      label: "UX/UI Resources"
     },
     {
-      id: 2,
+      id: 3,
       url: "/about",
       label: "about"
     },
     {
-      id: 3,
+      id: 4,
       url: "/contact",
       label: "contact"
     }
+   
   ];
 
 
@@ -87,8 +95,11 @@ class App extends Component {
                 <Home />
               </Route>
               <Route path="/webdev">
-             <Gallery />
+             <Category />
              </Route>
+             <Route path="/uxui">
+                <Airtable />
+              </Route>  
               <Route path="/about">
                 <About />
               </Route>

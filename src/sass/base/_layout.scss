@@ -43,6 +43,10 @@ body {
   background: $sidebar-bgcolor;
   min-width: 20vw;
   
+  nav ul li {
+    width: 100%;
+  }
+  
 }
 
 
