@@ -141,13 +141,16 @@ unBreakColumns = (cols) => {
           
           {this.state.records.length > 0 ? (
             this.state.records.map((record, index) => (
+                <a href={record.fields["URL"]} target="_blank" className="list-item-link"
+                    data-link="internal">
               <Card
                 key={record.fields["recordID"]}
                 id={record.fields["recordID"]}
                 category={record.fields["Category"]}
               >
+               
                 
-                <h3>{record.fields["Name"]}</h3>
+                
                 <figure>
                                  
                     <img
@@ -158,18 +161,26 @@ unBreakColumns = (cols) => {
                   <figcaption>
                   
                     
-
+<h3>{record.fields["Name"]}</h3>
                     <p>
                       {record.fields["Description"]}
                     </p>
+                    
                     <time dateTime={record.fields["ModifiedDate"]}>
                         {record.fields["ModifiedDate"]}
                       </time>
+                   
+                  </figcaption>
+                  
+             
+                   
+                </figure>
+       
                     
 
                     <dl className="tags">
                       
-                      <dt></dt>
+                   
                       {record.fields["TagText"].length > 0 ? (
                         record.fields["TagText"].map((tag, index) => (
                           <dd key={index}>{tag}</dd>
@@ -180,15 +191,9 @@ unBreakColumns = (cols) => {
 
                     
                     </dl>
-                  </figcaption>
-                </figure>
-
-                <div>
-                  <a href={record.fields["URL"]} target="_blank" className="view-details-link"
-                    data-link="internal">Go</a>
                
-                </div>
               </Card>
+                </a>
             ))
           ) : (
             <SpinnerCards />
