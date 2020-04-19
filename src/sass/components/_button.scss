@@ -106,10 +106,11 @@
 
 
 .list-item-link {
-  margin: 1rem 0;
+  margin: 0.5rem 0;
    background-color: $black;
-  color: $black;
-  padding: 1rem;
+  //color: $black;
+  padding: 0.5rem;
+  border-radius: 5px;
     
   &:hover {
     background-color: $dark-lavendar;
